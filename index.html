@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: Helvetica, Arial, sans-serif;
-      background: #dbd45c;
+      background: #ffffff;
       color: #1f1f1f;
       text-align: center;
     }
@@ -102,15 +102,17 @@
 
   <script>
     function loadPDF(pdfFile) {
-      document.getElementById("cover").style.display = "none";
-      document.getElementById("pdfSection").style.display = "block";
-      document.getElementById("pdfViewer").src = pdfFile;
+    document.getElementById("cover").style.display = "none";
+    document.getElementById("pdfSection").style.display = "block";
+    
+    // Añadimos '#view=FitH' para que obligue al navegador a ajustar el PDF horizontalmente
+    document.getElementById("pdfViewer").src = pdfFile + "#view=FitH";
     }
 
     function goBack() {
-      document.getElementById("pdfSection").style.display = "none";
-      document.getElementById("cover").style.display = "flex";
-      document.getElementById("pdfViewer").src = "";
+    document.getElementById("pdfSection").style.display = "none";
+    document.getElementById("cover").style.display = "flex";
+    document.getElementById("pdfViewer").src = "";
     }
   </script>
 
